@@ -1,18 +1,14 @@
-def last(xs):
-    return xs[len(xs)-1]
+def sum_of_digits(n):
+    if n<0:
+        n = n*(-1)
+    result = 0
+    while n!=0:
+        result += n%10
+        n = n//10
+    return result
 
-def before_last(xs):
-    return xs[len(xs)-2]
+print(sum_of_digits(1325132435356))
+print(sum_of_digits(123))
+print(sum_of_digits(6))
+print(sum_of_digits(-10))
 
-def nth_fibonacci(n):
-    fib = [1,1]
-    i=2
-    while len(fib)!=n+1:
-        fib += [(last(fib) + before_last(fib))]
-        i += 1
-    return fib[n-1]
-
-print (nth_fibonacci(1))
-print (nth_fibonacci(2))
-print (nth_fibonacci(3))
-print (nth_fibonacci(10))
